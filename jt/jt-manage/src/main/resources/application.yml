@@ -1,0 +1,28 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /    #ROOT
+spring:
+  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://176.201.103.4:33006/jtdb?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+#    url: jdbc:mysql://157.245.197.68:3306/jtdb?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: root
+#  resources:
+#    static-locations: classpath:src/main/webapp
+  mvc:
+    view:
+      prefix: /WEB-INF/views/   #视图解析器
+      suffix: .jsp
+#mybatis-plush配置
+mybatis-plus:
+  type-aliases-package: com.jt.pojo
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+#数据库执行的日志
+logging:
+  level: 
+    com.jt.mapper: debug
